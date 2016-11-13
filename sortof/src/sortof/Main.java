@@ -1,13 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+ * Projektin Main-luokka sisältää toistaiseksi vain testikoodia, mutta tänne toteutetaan pääohjelma jonka käynnistyttyä
+ * voidaan valita eri järjestysalgoritmeja, järjestää syöte näiden menetelmillä, ja nähdä vertailtavia tuloksia menetelmien tehokkuudesta.
+ * 
+ **/
 package sortof;
 
 /**
  *
- * @author antti
+ * @author Antti Rantapelkonen
  */
 public class Main {
 

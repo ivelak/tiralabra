@@ -1,39 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sortof;
 
 /**
+ * MergeSort järjestysalgoritmin toteuttava luokka
  *
- * @author antti
+ * @author Antti Rantapelkonen
+ *
  */
 public class MergeSort {
 
+    /**
+     * Luokan konstruktori ei saa parametrikseen mitään.
+     */
     public MergeSort() {
     }
 
     /**
-     * @param int[] list
-     * 
-     * sort(int[] list)-metodi on toteutettu sitä varten, että luokan ulkopuolelta kutsuttaessa ei tarvitse antaa parametriksi muuta kuin pelkkä taulukko.
-     * Metodi jatkaa kutsumalla varsinaista mergeSort-metodia määrittelemällä parametrit first ja last
+     * sort(int[] list)-metodi on toteutettu sitä varten, että luokan
+     * ulkopuolelta kutsuttaessa ei tarvitse antaa parametriksi muuta kuin
+     * pelkkä taulukko Metodi jatkaa kutsumalla varsinaista mergeSort-metodia
+     * määrittelemällä parametrit first ja last.
+     *
+     * @param list järjestettävä taulukko
+     *
      */
     public void sort(int[] list) {
         mergeSort(list, 0, list.length);
     }
 
     /**
-     * @param int[] list
-     * @param int first
-     * @param int last
-     * 
      * mergeSort(int[] list, int first, int last) saa jakaa taulukon
      * (kuvitteellisesti) pieniin osiin ja kutsuu itseään rekursiivisesti niin
      * kauan kunnes kuvitteellisella taulukolla on enää yksi alkio jäljellä
      * (jolloin se on luonnollisesti järjestetty). Metodi kutsuu merge-metodia
      * taulukoiden yhdistämiseksi.
+     *
+     * @param int[] list metodissa koko ajan mukana kuljetettava kokonainen
+     * taulukko
+     * @param int first alkulokaatio taulukossa
+     * @param int last loppulokaatio taulukossa
+     * @return Nothing
+     *
      */
     private void mergeSort(int[] list, int first, int last) {
         if (last - first > 1) {
@@ -46,14 +52,21 @@ public class MergeSort {
     }
 
     /**
+     *
+     * merge(int[] list, int first, int mid, int last) vertaa taulukon list
+     * first->(mid-1) ja (mid->(last-1)) alkioita keskenään, ja luo niistä
+     * järjestetyn taulukon newlist[] 
+     * Lopuksi metodi kopioi alkiot
+     * suuruusjärjestyksessä aluperäiseen taulukkoon list lokaatioille
+     * first-last.
      * 
-     * @param list
-     * @param first
-     * @param mid
-     * @param last 
+     * @param list mukana pidettävä koko taulukko
+     * @param first yhdistettävien taulukonosien ensimmäinen alkio
+     * @param mid yhdistettävien taulukonosien keskimmäinen alkio
+     * @param last yhdistettävien taulukonosien viimeinen alkio
+     * @return Nothing
+     *
      * 
-     * merge(int[] list, int first, int mid, int last) vertaa taulukon list first->(mid-1) ja (mid->(last-1)) alkioita keskenään,
-     * ja luo niistä järjestetyn taulukon newlist[]. Lopuksi metodi kopioi alkiot suuruusjärjestyksessä aluperäiseen taulukkoon list lokaatioille first-last
      */
     private void merge(int[] list, int first, int mid, int last) {
         //yhdistää taulukon list[first - mid-1] ja taulukon list[mid-last-1]

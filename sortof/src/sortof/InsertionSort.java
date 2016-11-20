@@ -1,16 +1,17 @@
-/**
- * Luokan InsertionSort konstruktorin parametrina tulee taulukko lukuja, jotka luokan metodi sort() 
- * järjestää pienimmästä suurimpaan Insertion Sort järjestysalgoritmia käyttäen.
- **/
+
 package sortof;
 
+/**
+ * InsertionSort-algoritmin toteuttava luokka.
+ **/
 public class InsertionSort {
 
     int[] list;
 
     /**
      * Konstruktori saa parametrikseen taulukon lukuja
-     * @param listToBeSorted 
+     * @param listToBeSorted parametrina saatava taulukko
+     *
      */
     public InsertionSort(int[] listToBeSorted) {
 
@@ -20,7 +21,7 @@ public class InsertionSort {
 
   /**
    * sort()-metodi palauttaa järjestetyn taulukon.
-   * @return array
+   * @return palauttaa järjestetyn taulukon
    */  
     public int[] sort() {
 

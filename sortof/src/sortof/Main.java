@@ -1,14 +1,12 @@
+package sortof;
+
 /**
  * Projektin Main-luokka sisältää toistaiseksi vain testikoodia, mutta tänne toteutetaan pääohjelma jonka käynnistyttyä
  * voidaan valita eri järjestysalgoritmeja, järjestää syöte näiden menetelmillä, ja nähdä vertailtavia tuloksia menetelmien tehokkuudesta.
  * 
- **/
-package sortof;
-
-/**
- *
  * @author Antti Rantapelkonen
- */
+ * 
+ **/
 public class Main {
 
     /**

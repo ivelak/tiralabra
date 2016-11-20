@@ -49,37 +49,46 @@ public class InsertionSortTest {
     }
 
     /**
-     * InsertionSort -luokan sort-metodin testit.
+     * Tyhjän taulukon järjestäminen toimii
      */
     @Test
     public void worksWithEmpty() {
         sorter = new InsertionSort(empty);
-        int[] sortedEmpty= sorter.sort();
-        
+        int[] sortedEmpty = sorter.sort();
+
         assertArrayEquals(new int[]{}, sortedEmpty);
     }
-    
+
+    /**
+     * Järjestäminen toimii taulukolle jossa on vain yksi alkio
+     */
     @Test
-    public void worksWithOneElement(){
+    public void worksWithOneElement() {
         sorter = new InsertionSort(oneElement);
-        int[] sortedOneElement= sorter.sort();
-        
+        int[] sortedOneElement = sorter.sort();
+
         assertArrayEquals(new int[]{1}, sortedOneElement);
     }
-    
+
+    /**
+     * Järjestyksessä olevan taulukon järjestäminen toimii
+     */
     @Test
-    public void worksWithOrdered(){
+    public void worksWithOrdered() {
         sorter = new InsertionSort(ordered);
-        int[] sortedInOrder= sorter.sort();
-        
+        int[] sortedInOrder = sorter.sort();
+
         assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, sortedInOrder);
     }
-    
+
+    /**
+     * Epäjärjestyksessä olevan taulukon järjestäminen toimii
+     */
     @Test
-    public void sortsUnorderedList(){
+    public void sortsUnorderedList() {
         sorter = new InsertionSort(unordered);
-        int[] sorted= sorter.sort();
-        
+        int[] sorted = sorter.sort();
+
         assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, sorted);
     }
 

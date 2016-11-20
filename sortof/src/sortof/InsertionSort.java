@@ -10,11 +10,11 @@ public class InsertionSort {
 
     /**
      * Konstruktori saa parametrikseen taulukon lukuja
-     * @param array 
+     * @param listToBeSorted 
      */
-    public InsertionSort(int[] array) {
+    public InsertionSort(int[] listToBeSorted) {
 
-        this.list = array;
+        this.list = listToBeSorted;
 
     }
 

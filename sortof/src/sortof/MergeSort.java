@@ -57,34 +57,34 @@ public class MergeSort {
      */
     private void merge(int[] list, int first, int mid, int last) {
         //yhdistää taulukon list[first - mid-1] ja taulukon list[mid-last-1]
-        int leftpos = first;
-        int rightpos = mid;
+        int left = first;
+        int right = mid;
         int newpos = 0;
         int[] newList = new int[last - first];
-        while (leftpos < mid && rightpos <= (last - 1)) {
-            if (list[leftpos] <= list[rightpos]) {
-                newList[newpos] = list[leftpos];
-                leftpos++;
+        while (left < mid && right <= (last - 1)) {
+            if (list[left] <= list[right]) {
+                newList[newpos] = list[left];
+                left++;
                 newpos++;
             } else {
-                newList[newpos] = list[rightpos];
-                rightpos++;
+                newList[newpos] = list[right];
+                right++;
                 newpos++;
             }
         }
         // kopioidaan loput vasemmalta puolelta uuteen listaan mikäli sieltä jotain löytyy.
         // Tässä oletetaan että oikea puoli on jo koluttu loppuun ja vasemmalle mahdollisesti jäi vielä jotain.
-        while (leftpos < mid) {
-            newList[newpos] = list[leftpos];
+        while (left < mid) {
+            newList[newpos] = list[left];
             newpos++;
-            leftpos++;
+            left++;
         }
         // kopioidaan loput oikealta puolelta uuteen listaan mikäli sieltä jotain löytyy.
         // Tässä oletetaan että vasen puoli on jo koluttu loppuun ja oikealle mahdollisesti jäi vielä jotain.
-        while (rightpos <= (last - 1)) {
-            newList[newpos] = list[rightpos];
+        while (right <= (last - 1)) {
+            newList[newpos] = list[right];
             newpos++;
-            rightpos++;
+            right++;
         }
         // kopioidaan järjestetty newList[] alkuperäisen taulukon paikoille list[first - last-1]
         int oldpos = first;

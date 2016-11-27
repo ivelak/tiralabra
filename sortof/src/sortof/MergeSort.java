@@ -28,7 +28,7 @@ public class MergeSort {
     }
 
     /**
-     * mergeSort(int[] list, int first, int last) saa jakaa taulukon
+     * mergeSort(int[] list, int first, int last) jakaa taulukon
      * (kuvitteellisesti) pieniin osiin ja kutsuu itseään rekursiivisesti niin
      * kauan kunnes kuvitteellisella taulukolla on enää yksi alkio jäljellä
      * (jolloin se on luonnollisesti järjestetty). Metodi kutsuu merge-metodia

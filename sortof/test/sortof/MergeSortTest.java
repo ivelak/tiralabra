@@ -51,7 +51,7 @@ public class MergeSortTest {
     }
 
     /**
-     * Tyhjän taulukon järjestäminen toimii
+     * Testaa toimiiko tyhjän taulukon järjestäminen.
      */
     @Test
     public void worksWithEmpty() {
@@ -62,7 +62,7 @@ public class MergeSortTest {
     }
     
     /**
-     * Järjestäminen toimii taulukolle jossa on vain yksi alkio
+     * Testaa toimiiko järjestäminen taulukolle jossa on vain yksi alkio.
      */
     @Test
     public void worksWithOneElement(){
@@ -71,7 +71,7 @@ public class MergeSortTest {
         assertArrayEquals(new int[]{1}, oneElement);
     }
     /**
-     * Järjestyksessä olevan taulukon järjestäminen toimii
+     * Testaa toimiiko valmiiksi järjestyksessä olevan taulukon järjestäminen.
      */
     @Test
     public void worksWithOrdered(){
@@ -80,7 +80,7 @@ public class MergeSortTest {
         assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, ordered);
     }
     /**
-     * Epäjärjestyksessä olevan taulukon järjestäminen toimii
+     * Testaa toimiiko epäjärjestyksessä olevan taulukon järjestäminen.
      */
     @Test
     public void sortsUnorderedList(){

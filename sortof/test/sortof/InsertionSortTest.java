@@ -5,6 +5,7 @@
  */
 package sortof;
 
+import sortof.sortingClasses.InsertionSort;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -1,16 +1,15 @@
-package sortof;
+package sortof.sortingClasses;
 
 /**
- * Quicksort järjestysalgoritmin toteuttava luokka
+ * Quicksort järjestysalgoritmin toteuttava luokka.
  *
- * @author Antti Rantapelkonen
  *
  */
 public class QuickSort {
     private long executionTime;
 
     /**
-     * Luokan konstruktori ei saa parametrikseen mitään.
+     * Luokan konstruktori ei saa parametreja.
      */
     public QuickSort() {
     }
@@ -19,7 +18,8 @@ public class QuickSort {
      * sort(int[] list)-metodi on toteutettu sitä varten, että luokan
      * ulkopuolelta kutsuttaessa ei tarvitse antaa parametriksi muuta kuin
      * pelkkä taulukko Metodi jatkaa kutsumalla varsinaista mergeSort-metodia
-     * määrittelemällä parametrit first ja last.
+     * määrittelemällä parametrit first ja last, Metodin sisällä mitataan järjestämiseen kuluva aika ja asetetaan se
+     * luokan parametriin executionTime kutsumalla setExecutionTime()-metodia.
      *
      * @param list järjestettävä taulukko
      *

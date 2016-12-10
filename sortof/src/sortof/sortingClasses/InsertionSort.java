@@ -1,21 +1,31 @@
 
-package sortof;
+package sortof.sortingClasses;
 
 /**
  * InsertionSort-algoritmin toteuttava luokka.
+ * @param executionTime suorituksen aika millisekunteina
  **/
 public class InsertionSort {
 
     long executionTime;
 
     /**
-     * Konstruktori saa parametrikseen taulukon lukuja
-     * @param listToBeSorted parametrina saatava taulukko
+     * Luokan konstruktori ei saa parametreja.
      *
      */
     public InsertionSort() {
     }
     
+    /**
+     * sort(int[] list)-metodi on toteutettu sitä varten, että luokan
+     * ulkopuolelta kutsuttaessa ei tarvitse antaa parametriksi muuta kuin
+     * pelkkä taulukko Metodi jatkaa kutsumalla varsinaista insertionSort-metodia,
+     * Metodin sisällä mitataan suoritukseen kuluva aika millisekunteina, ja talletetaan 
+     * se kutsumalla setExecutionTime()-metodia.
+     *
+     * @param list järjestettävä taulukko
+     *
+     */
     public void sort(int[] list){
         long startTime = System.currentTimeMillis();
         insertionSort(list);
@@ -24,8 +34,8 @@ public class InsertionSort {
     }
 
   /**
-   * sort()-metodi palauttaa järjestetyn taulukon.
-   * @return palauttaa järjestetyn taulukon
+   * sort()-metodi järjestää taulukon InsertionSort-algoritmilla.
+   * @param list järjestettävä taulukko
    */  
     private void insertionSort(int[] list) {
 

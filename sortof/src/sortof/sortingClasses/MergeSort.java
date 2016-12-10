@@ -1,4 +1,4 @@
-package sortof;
+package sortof.sortingClasses;
 
 /**
  * MergeSort järjestysalgoritmin toteuttava luokka
@@ -20,7 +20,8 @@ public class MergeSort {
      * sort(int[] list)-metodi on toteutettu sitä varten, että luokan
      * ulkopuolelta kutsuttaessa ei tarvitse antaa parametriksi muuta kuin
      * pelkkä taulukko Metodi jatkaa kutsumalla varsinaista mergeSort-metodia
-     * määrittelemällä parametrit first ja last.
+     * määrittelemällä parametrit first ja last, Metodin sisällä mitataan järjestämiseen kuluva aika ja asetetaan se
+     * luokan parametriin executionTime kutsumalla setExecutionTime()-metodia.
      *
      * @param list järjestettävä taulukko
      *

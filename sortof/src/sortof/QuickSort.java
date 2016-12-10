@@ -7,6 +7,7 @@ package sortof;
  *
  */
 public class QuickSort {
+    private long executionTime;
 
     /**
      * Luokan konstruktori ei saa parametrikseen mitään.
@@ -24,7 +25,10 @@ public class QuickSort {
      *
      */
     public void sort(int[] list){
+        long startTime = System.currentTimeMillis();
         quickSort(list, 0, list.length-1);
+        long stopTime = System.currentTimeMillis();
+        setExecutionTime(stopTime - startTime);
     }
     
     /**
@@ -76,5 +80,14 @@ public class QuickSort {
         list[first]=list[second];
         list[second]=temp;
     }
+
+    private void setExecutionTime(long time) {
+        this.executionTime=time;
+    }
+
+    public long getExecutionTime() {
+        return executionTime;
+    }
+    
     
 }

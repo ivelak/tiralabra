@@ -6,24 +6,28 @@ package sortof;
  **/
 public class InsertionSort {
 
-    int[] list;
+    long executionTime;
 
     /**
      * Konstruktori saa parametrikseen taulukon lukuja
      * @param listToBeSorted parametrina saatava taulukko
      *
      */
-    public InsertionSort(int[] listToBeSorted) {
-
-        this.list = listToBeSorted;
-
+    public InsertionSort() {
+    }
+    
+    public void sort(int[] list){
+        long startTime = System.currentTimeMillis();
+        insertionSort(list);
+        long stopTime = System.currentTimeMillis();
+        setExecutionTime(stopTime - startTime);
     }
 
   /**
    * sort()-metodi palauttaa järjestetyn taulukon.
    * @return palauttaa järjestetyn taulukon
    */  
-    public int[] sort() {
+    private void insertionSort(int[] list) {
 
         for (int i = 1; i < list.length; i++) {
             int temp = list[i];
@@ -34,7 +38,13 @@ public class InsertionSort {
             }
             list[j + 1] = temp;
         }
-        return list;
+    }
+
+    private void setExecutionTime(long time) {
+        this.executionTime=time;
+    }
+    public long getExecutionTime(){
+        return this.executionTime;
     }
     
 

@@ -8,8 +8,10 @@ package sortof;
  */
 public class MergeSort {
 
+    private long executionTime;
+
     /**
-     * Luokan konstruktori ei saa parametrikseen mitään.
+     * Luokan konstruktori ei saa parametreja.
      */
     public MergeSort() {
     }
@@ -24,7 +26,10 @@ public class MergeSort {
      *
      */
     public void sort(int[] list) {
+        long startTime = System.currentTimeMillis();
         mergeSort(list, 0, list.length);
+        long stopTime = System.currentTimeMillis();
+        setExecutionTime(stopTime - startTime);
     }
 
     /**
@@ -55,18 +60,17 @@ public class MergeSort {
      *
      * merge(int[] list, int first, int mid, int last) vertaa taulukon list
      * first->(mid-1) ja (mid->(last-1)) alkioita keskenään, ja luo niistä
-     * järjestetyn taulukon newlist[] 
-     * Lopuksi metodi kopioi alkiot
+     * järjestetyn taulukon newlist[] Lopuksi metodi kopioi alkiot
      * suuruusjärjestyksessä aluperäiseen taulukkoon list lokaatioille
      * first-last.
-     * 
+     *
      * @param list mukana pidettävä koko taulukko
      * @param first yhdistettävien taulukonosien ensimmäinen alkio
      * @param mid yhdistettävien taulukonosien keskimmäinen alkio
      * @param last yhdistettävien taulukonosien viimeinen alkio
      * @return Nothing
      *
-     * 
+     *
      */
     private void merge(int[] list, int first, int mid, int last) {
         //yhdistää taulukon list[first - mid-1] ja taulukon list[mid-last-1]
@@ -105,6 +109,14 @@ public class MergeSort {
             list[oldpos] = newList[i];
             oldpos++;
         }
+    }
+
+    private void setExecutionTime(long time) {
+        this.executionTime = time;
+    }
+
+    public long getExecutionTime() {
+        return this.executionTime;
     }
 
 }

@@ -38,7 +38,7 @@ public class InsertionSortTest {
 
     @Before
     public void setUp() {
-
+        sorter = new InsertionSort();
         this.empty = new int[]{};
         this.oneElement = new int[]{1};
         this.ordered = new int[]{-5, -2, 0, 2, 5};
@@ -54,10 +54,10 @@ public class InsertionSortTest {
      */
     @Test
     public void worksWithEmpty() {
-        sorter = new InsertionSort(empty);
-        int[] sortedEmpty = sorter.sort();
 
-        assertArrayEquals(new int[]{}, sortedEmpty);
+        sorter.sort(empty);
+
+        assertArrayEquals(new int[]{}, this.empty);
     }
 
     /**
@@ -65,10 +65,9 @@ public class InsertionSortTest {
      */
     @Test
     public void worksWithOneElement() {
-        sorter = new InsertionSort(oneElement);
-        int[] sortedOneElement = sorter.sort();
+        sorter.sort(oneElement);
 
-        assertArrayEquals(new int[]{1}, sortedOneElement);
+        assertArrayEquals(new int[]{1}, this.oneElement);
     }
 
     /**
@@ -76,10 +75,9 @@ public class InsertionSortTest {
      */
     @Test
     public void worksWithOrdered() {
-        sorter = new InsertionSort(ordered);
-        int[] sortedInOrder = sorter.sort();
+        sorter.sort(ordered);
 
-        assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, sortedInOrder);
+        assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, ordered);
     }
 
     /**
@@ -87,10 +85,9 @@ public class InsertionSortTest {
      */
     @Test
     public void sortsUnorderedList() {
-        sorter = new InsertionSort(unordered);
-        int[] sorted = sorter.sort();
+        sorter.sort(unordered);
 
-        assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, sorted);
+        assertArrayEquals(new int[]{-5, -2, 0, 2, 5}, unordered);
     }
 
 }

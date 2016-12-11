@@ -31,7 +31,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Comparator comp = new Comparator(100000, 10);
+        Comparator comp = new Comparator(500, 10000);
         comp.run();
         
     }

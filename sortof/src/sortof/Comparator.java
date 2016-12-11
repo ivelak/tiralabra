@@ -18,9 +18,9 @@ public class Comparator {
     private MergeSort merge;
     private QuickSort quick;
 
-    private long insertionAverage;
-    private long mergeAverage;
-    private long quickAverage;
+    private double insertionAverage;
+    private double mergeAverage;
+    private double quickAverage;
 
     private int[] arrayToSort;
     private int arrayLength;
@@ -34,6 +34,16 @@ public class Comparator {
         this.arrayLength = lengthOfArray;
         this.executions = howManyExecutions;
         this.arrayToSort = createRandomArray(lengthOfArray);
+    }
+    
+    public Comparator(int[] givenArray, int howManyExecutions) {
+        this.insert = new InsertionSort();
+        this.merge = new MergeSort();
+        this.quick = new QuickSort();
+
+        this.arrayLength = givenArray.length;
+        this.executions = howManyExecutions;
+        this.arrayToSort = givenArray;
     }
 
     private int[] createRandomArray(int length) {
@@ -56,7 +66,7 @@ public class Comparator {
             timeSum += insert.getExecutionTime();
             System.out.println("time: " + insert.getExecutionTime() + " SUM: " + timeSum);
         }
-        insertionAverage = timeSum / (long) executions;
+        insertionAverage = (double)timeSum / executions;
     }
 
     private void runMerge() {
@@ -69,7 +79,7 @@ public class Comparator {
             timeSum += merge.getExecutionTime();
             System.out.println("time: " + merge.getExecutionTime() + " SUM: " + timeSum);
         }
-        mergeAverage = timeSum / (long) executions;
+        mergeAverage = (double)timeSum / executions;
     }
 
     private void runQuick() {
@@ -82,7 +92,7 @@ public class Comparator {
             timeSum += quick.getExecutionTime();
             System.out.println("time: " + quick.getExecutionTime() + " SUM: " + timeSum);
         }
-        quickAverage = timeSum / (long) executions;
+        quickAverage = (double)timeSum / executions;
     }
 
     public void run() {

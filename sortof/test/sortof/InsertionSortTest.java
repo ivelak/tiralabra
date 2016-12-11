@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sortof;
 
 import sortof.sortingClasses.InsertionSort;
@@ -15,25 +10,17 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author antti
+ * InsertionSort-luokan JUnit-testit
+ * 
+ * @author Antti Rantapelkonen
  */
 public class InsertionSortTest {
 
     public InsertionSort sorter;
-    public int[] empty;
-    public int[] oneElement;
-    public int[] ordered;
-    public int[] unordered;
+    public int[] empty, oneElement, ordered, unordered;
 
+    
     public InsertionSortTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     @Before
@@ -45,12 +32,9 @@ public class InsertionSortTest {
         this.unordered = new int[]{5, 2, -5, -2, 0};
     }
 
-    @After
-    public void tearDown() {
-    }
 
     /**
-     * Tyhjän taulukon järjestäminen toimii
+     * Tyhjän taulukon järjestäminen toimii.
      */
     @Test
     public void worksWithEmpty() {
@@ -61,7 +45,7 @@ public class InsertionSortTest {
     }
 
     /**
-     * Järjestäminen toimii taulukolle jossa on vain yksi alkio
+     * Järjestäminen toimii taulukolle jossa on vain yksi alkio.
      */
     @Test
     public void worksWithOneElement() {
@@ -71,7 +55,7 @@ public class InsertionSortTest {
     }
 
     /**
-     * Järjestyksessä olevan taulukon järjestäminen toimii
+     * Järjestyksessä olevan taulukon järjestäminen toimii.
      */
     @Test
     public void worksWithOrdered() {
@@ -81,7 +65,7 @@ public class InsertionSortTest {
     }
 
     /**
-     * Epäjärjestyksessä olevan taulukon järjestäminen toimii
+     * Epäjärjestyksessä olevan taulukon järjestäminen toimii.
      */
     @Test
     public void sortsUnorderedList() {

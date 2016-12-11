@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sortof;
 
 import sortof.sortingClasses.QuickSort;
@@ -14,27 +10,18 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author antti
+ * QuickSort-luokan JUnit-testit.
+ * 
+ * @author Antti Rantapelkonen
  */
 public class QuickSortTest {
     private QuickSort sorter;
     private int[] list;
-    public int[] empty;
-    public int[] oneElement;
-    public int[] ordered;
-    public int[] unordered;
+    public int[] empty, oneElement, ordered, unordered;
     
     public QuickSortTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
     @Before
     public void setUp() {
@@ -46,9 +33,6 @@ public class QuickSortTest {
         this.unordered = new int[]{5, 2, -5, -2, 0};
     }
     
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Testaa swap-metodin toimivuuden, eli vaihtaako metodi annettujen indeksien mukaisten alkioiden paikkaa päittäin.

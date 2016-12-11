@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sortof;
 
 import sortof.sortingClasses.MergeSort;
@@ -21,20 +16,10 @@ import static org.junit.Assert.*;
 public class MergeSortTest {
 
     public MergeSort sorter;
-    public int[] empty;
-    public int[] oneElement;
-    public int[] ordered;
-    public int[] unordered;
+    public int[] empty, oneElement, ordered, unordered;
+    
 
     public MergeSortTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
     }
 
     @Before
@@ -47,9 +32,6 @@ public class MergeSortTest {
         
     }
 
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Testaa toimiiko tyhjän taulukon järjestäminen.

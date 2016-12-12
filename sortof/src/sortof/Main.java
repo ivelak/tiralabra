@@ -1,5 +1,7 @@
 package sortof;
 
+import java.util.Arrays;
+import java.util.Collections;
 import sortof.sortingClasses.QuickSort;
 import sortof.sortingClasses.InsertionSort;
 import sortof.sortingClasses.MergeSort;
@@ -26,13 +28,31 @@ public class Main {
         return array;
     }
 
+    public static void reverse(int[] array) {
+        int temp;
+
+        for (int i = 0; i < array.length / 2; i++) {
+            temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
+    }
+
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println("");
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-        Comparator comp = new Comparator(500, 10000);
-        comp.run();
+        UI ui=new UI();
+        ui.run();
+        
         
     }
 

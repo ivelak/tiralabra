@@ -62,6 +62,7 @@ public class QuickSort {
             }
             swap(list, first, right);
             
+            //System.out.println("first: "+first+" right: "+right + " last: "+last);
             quickSort(list, first, right-1);
             quickSort(list, right+1, last);
         }

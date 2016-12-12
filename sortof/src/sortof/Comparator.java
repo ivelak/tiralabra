@@ -14,10 +14,7 @@ import sortof.sortingClasses.QuickSort;
  */
 public class Comparator {
 
-    private InsertionSort insert;
-    private MergeSort merge;
-    private QuickSort quick;
-
+   
     private double insertionAverage;
     private double mergeAverage;
     private double quickAverage;
@@ -27,9 +24,6 @@ public class Comparator {
     private int executions;
 
     public Comparator(int lengthOfArray, int howManyExecutions) {
-        this.insert = new InsertionSort();
-        this.merge = new MergeSort();
-        this.quick = new QuickSort();
 
         this.arrayLength = lengthOfArray;
         this.executions = howManyExecutions;
@@ -37,10 +31,7 @@ public class Comparator {
     }
     
     public Comparator(int[] givenArray, int howManyExecutions) {
-        this.insert = new InsertionSort();
-        this.merge = new MergeSort();
-        this.quick = new QuickSort();
-
+        
         this.arrayLength = givenArray.length;
         this.executions = howManyExecutions;
         this.arrayToSort = givenArray;
@@ -56,48 +47,56 @@ public class Comparator {
     }
 
     private void runInsertion() {
-
+        InsertionSort insert;
         long timeSum = 0;
-        System.out.println("Insertion");
+        System.out.print("    (InsertionSort...");
         for (int i = 0; i < executions; i++) {
+            insert=new InsertionSort();
             int[] temp = this.arrayToSort.clone();
             insert.sort(temp);
             
             timeSum += insert.getExecutionTime();
-            System.out.println("time: " + insert.getExecutionTime() + " SUM: " + timeSum);
+            //System.out.println("time: " + insert.getExecutionTime() + " SUM: " + timeSum);
         }
         insertionAverage = (double)timeSum / executions;
+        System.out.println("100%)");
     }
 
     private void runMerge() {
+        MergeSort merge;
         long timeSum = 0;
-        System.out.println("Merge");
+        System.out.print("        (MergeSort...");
         for (int i = 0; i < executions; i++) {
+            merge=new MergeSort();
             int[] temp = this.arrayToSort.clone();
             merge.sort(temp);
             
             timeSum += merge.getExecutionTime();
-            System.out.println("time: " + merge.getExecutionTime() + " SUM: " + timeSum);
+            //System.out.println("time: " + merge.getExecutionTime() + " SUM: " + timeSum);
         }
         mergeAverage = (double)timeSum / executions;
+        System.out.println("100%)");
     }
 
     private void runQuick() {
+        QuickSort quick;
         long timeSum = 0;
-        System.out.println("Quick");
+        System.out.print("            (QuickSort...");
         for (int i = 0; i < executions; i++) {
+            quick=new QuickSort();
             int[] temp = this.arrayToSort.clone();
             quick.sort(temp);
             
             timeSum += quick.getExecutionTime();
-            System.out.println("time: " + quick.getExecutionTime() + " SUM: " + timeSum);
+            //System.out.println("time: " + quick.getExecutionTime() + " SUM: " + timeSum);
         }
         quickAverage = (double)timeSum / executions;
+        System.out.println("100%)");
     }
 
     public void run() {
-
-        System.out.println("Järjestettävä taulukko: ");
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Suorituksessa oleva algoritmi:");
 
         runInsertion();
         runMerge();
@@ -107,7 +106,7 @@ public class Comparator {
                 + "\n" + "Algoritmien keskimääräiset suoritusajat millisekunteina: \n\n"
                 + "InsertionSort: " + this.insertionAverage + "\n"
                 + "MergeSort: " + this.mergeAverage + "\n"
-                + "QuickSort: " + this.quickAverage);
+                + "QuickSort: " + this.quickAverage + "\n");
     }
 
     private void printArray(int[] array) {

@@ -14,7 +14,6 @@ public class UI {
 
     public UI() {
         this.scan = new Scanner(System.in);
-
     }
 
     public void run() {

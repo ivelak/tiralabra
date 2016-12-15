@@ -23,6 +23,13 @@ public class Comparator {
     private int arrayLength;
     private int executions;
 
+    /**
+     * Ensimmäinen konstruktori on varsinaista käyttöliittymää varten.
+     * Konstruktori alustaa määritettävän taulukon pituusparametrin avulla kutsumalla createRandomArray-metodia.
+     * 
+     * @param lengthOfArray käyttäjä päättää järjestettävän taulukon koon.
+     * @param howManyExecutions  Käyttäjä päättää monestikko taulukko järjestetään mittaustulosten tarkkuuden parantamiseksi
+     */
     public Comparator(int lengthOfArray, int howManyExecutions) {
 
         this.arrayLength = lengthOfArray;
@@ -30,6 +37,11 @@ public class Comparator {
         this.arrayToSort = createRandomArray(lengthOfArray);
     }
     
+    /**
+     * Toinen konstruktori on luotu testausdataa varten. Siinä parametrinä annetaan valmis taulukko.
+     * @param givenArray Järjestettävä taulukko
+     * @param howManyExecutions Käyttäjä päättää monestikko taulukko järjestetään mittaustulosten tarkkuuden parantamiseksi
+     */
     public Comparator(int[] givenArray, int howManyExecutions) {
         
         this.arrayLength = givenArray.length;
@@ -37,6 +49,11 @@ public class Comparator {
         this.arrayToSort = givenArray;
     }
 
+    /**
+     * Metodi saa parametrina pituuden ja palauttaa random taulukon.
+     * @param length
+     * @return array
+     */
     private int[] createRandomArray(int length) {
         int[] array = new int[length];
         Random r = new Random();
@@ -46,6 +63,27 @@ public class Comparator {
         return array;
     }
 
+    public int[] getArrayToSort() {
+        return arrayToSort;
+    }
+
+    public double getInsertionAverage() {
+        return insertionAverage;
+    }
+
+    public double getMergeAverage() {
+        return mergeAverage;
+    }
+
+    public double getQuickAverage() {
+        return quickAverage;
+    }
+    
+
+    /**
+     * Ajaa InsertionSort-algoritmin konstruktorissa alustetun executions-muuttujan lukumäärän verran, Metodi laskee keskimääräisen 
+     * suoritusajan ja tallettaa sen insertionAverage muuttujaan.
+     */
     private void runInsertion() {
         InsertionSort insert;
         long timeSum = 0;
@@ -56,12 +94,15 @@ public class Comparator {
             insert.sort(temp);
             
             timeSum += insert.getExecutionTime();
-            //System.out.println("time: " + insert.getExecutionTime() + " SUM: " + timeSum);
         }
         insertionAverage = (double)timeSum / executions;
         System.out.println("100%)");
     }
 
+    /**
+     * Ajaa MergeSort-algoritmin konstruktorissa alustetun executions-muuttujan lukumäärän verran, Metodi laskee keskimääräisen 
+     * suoritusajan ja tallettaa sen mergeAverage muuttujaan.
+     */
     private void runMerge() {
         MergeSort merge;
         long timeSum = 0;
@@ -78,6 +119,10 @@ public class Comparator {
         System.out.println("100%)");
     }
 
+    /**
+     * Ajaa QuickSort-algoritmin konstruktorissa alustetun executions-muuttujan lukumäärän verran, Metodi laskee keskimääräisen 
+     * suoritusajan ja tallettaa sen quickAverage muuttujaan.
+     */
     private void runQuick() {
         QuickSort quick;
         long timeSum = 0;
@@ -94,6 +139,10 @@ public class Comparator {
         System.out.println("100%)");
     }
 
+    /**
+     * Käynnistää kootusti kaikkien järjestysalgoritmien ajometodit ja tulostaa järjestettävän 
+     * taulukon pituuden, suorituskertojen määrän ja kunkin algoritmin keskimääräisen suoritusajan.
+     */
     public void run() {
         System.out.println("-----------------------------------------------------------------------");
         System.out.println("Suorituksessa oleva algoritmi:");
@@ -109,11 +158,30 @@ public class Comparator {
                 + "QuickSort: " + this.quickAverage + "\n");
     }
 
+    /**
+     * Kehityksen aikana käytetty apumetodi taulukon tulostamiseen.
+     * @param array 
+     */
     private void printArray(int[] array) {
         for (int b : array) {
             System.out.print(b + " ");
         }
         System.out.println("");
+    }
+    
+    /**
+     * Kehityksen aikana käytetty apumetodi joka parametrina saadun taulukon järjestyksen päinvastaiseksi.
+     * 
+     * @param array 
+     */
+     public void reverse(int[] array) {
+        int temp;
+
+        for (int i = 0; i < array.length / 2; i++) {
+            temp = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = temp;
+        }
     }
 
 }

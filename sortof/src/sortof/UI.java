@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * Tekstikäyttöliittymäluokka projektille. 
  *
  * @author Antti Rantapelkonen
  */
@@ -12,10 +13,16 @@ public class UI {
     private Comparator comp;
     private Scanner scan;
 
+    /**
+     * Konstruktori alustaa skannerin käyttäjän syötteitä varten.
+     */
     public UI() {
         this.scan = new Scanner(System.in);
     }
 
+    /**
+     * run()-metodi tulostaa käyttäjän nähtäville tervetuloa-tekstin ja kutsuu readSize()- ja readExecutions()-metodit syötteen pituuden ja toistomäärien määrittämiseksi.
+     */
     public void run() {
         int size;
         int executions;
@@ -50,6 +57,11 @@ public class UI {
         }
     }
 
+    /**
+     * Lukee käyttäjältä skannerilla taulukon koon ja validoi annetun syötteen.
+     * 
+     * @return size palautetaan käyttäjän syöttämä taulukon koko 
+     */
     private int readSize() {
         int size;
         while (true) {
@@ -76,6 +88,11 @@ public class UI {
         return size;
     }
 
+    /**
+     * Lukee käyttäjä skannerilla suoritettavien toistokertojen määrän ja validoi annetun syötteen.
+     * 
+     * @return exec palautetaan käyttäjän syöttämä suoritusmäärä
+     */
     private int readExecutions() {
         int exec;
         while (true) {
@@ -100,6 +117,11 @@ public class UI {
         return exec;
     }
     
+    /**
+     * Apumetodi readSize()- ja readExecutions()- metodeille joka tarkistaa saamansa parametrin numeriuden.
+     * @param input parametrina käyttäjän antama syöte
+     * @return palauttaa true mikäli syöte numeerinen, muuten false
+     */
     private boolean isNumeric(String input){
         try
         {

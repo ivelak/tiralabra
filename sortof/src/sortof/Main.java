@@ -8,10 +8,7 @@ import sortof.sortingClasses.MergeSort;
 import java.util.Random;
 
 /**
- * Projektin Main-luokka sisältää toistaiseksi vain testikoodia, mutta tänne
- * toteutetaan pääohjelma jonka käynnistyttyä voidaan valita eri
- * järjestysalgoritmeja, järjestää syöte näiden menetelmillä, ja nähdä
- * vertailtavia tuloksia menetelmien tehokkuudesta.
+ * Main-luokka käynnistää tekstikäyttöliittymän UI.
  *
  * @author Antti Rantapelkonen
  *
@@ -19,24 +16,8 @@ import java.util.Random;
  */
 public class Main {
 
-    public static int[] createRandomArray(int length) {
-        int[] array = new int[length];
-        Random r = new Random();
-        for (int i = 0; i < length; i++) {
-            array[i] = r.nextInt();
-        }
-        return array;
-    }
-
-    public static void reverse(int[] array) {
-        int temp;
-
-        for (int i = 0; i < array.length / 2; i++) {
-            temp = array[i];
-            array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
-        }
-    }
+    
+   
 
     public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++) {

@@ -122,7 +122,7 @@ public class UI {
      * @param input parametrina käyttäjän antama syöte
      * @return palauttaa true mikäli syöte numeerinen, muuten false
      */
-    private boolean isNumeric(String input){
+    public boolean isNumeric(String input){
         try
         {
             int a = Integer.parseInt(input);

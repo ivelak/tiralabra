@@ -72,9 +72,9 @@ public class QuickSort {
     /**
      * swap-metodi vaihtaa parametrien first ja second paikat keskenään taulukossa list.
      * 
-     * @param list
-     * @param first
-     * @param second 
+     * @param list järjestettävä taulukko
+     * @param first ensimmäinen
+     * @param second toinen
      */
     public void swap(int[] list, int first, int second){
         int temp = list[first];

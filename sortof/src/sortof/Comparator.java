@@ -172,7 +172,7 @@ public class Comparator {
     /**
      * Kehityksen aikana käytetty apumetodi joka parametrina saadun taulukon järjestyksen päinvastaiseksi.
      * 
-     * @param array 
+     * @param array käännettävä taulukko
      */
      public void reverse(int[] array) {
         int temp;

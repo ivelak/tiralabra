@@ -3,7 +3,7 @@ package sortof.sortingClasses;
 
 /**
  * InsertionSort-algoritmin toteuttava luokka.
- * @param executionTime suorituksen aika millisekunteina
+ * 
  **/
 public class InsertionSort {
 
